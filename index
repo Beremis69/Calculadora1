@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora</title>
+</head>
+<body>
+	<button type="button" onclick="A(1)">1</button>
+	<button type="button" onclick="A(2)">2</button>
+	<button type="button" onclick="A(3)">3</button>
+	<button type="button" onclick="A(4)">4</button>
+	<button type="button" onclick="A(5)">5</button>
+	<button type="button" onclick="A(6)">6</button>
+	<button type="button" onclick="A(7)">7</button>
+	<button type="button" onclick="A(8)">8</button>
+	<button type="button" onclick="A(9)">9</button>
+	<button type="button" onclick="A(0)">0</button>
+	<P>___________________________________</P>
+	<button type="button" onclick="B('+')">+</button>
+	<button type="button" onclick="B('-')">-</button>
+	<button type="button" onclick="B('*')">*</button>
+	<button type="button" onclick="C()">=</button>
+	<button type="button" onclick="CLEAR()">Clear</button>
+	<P>___________________________________</P>
+	<p><label type="text" id="R"></label></p>
+	<label>Resultado</label>
+	<p><label type="text" id="RR"></label></p>
+	<script>
+		let B1 = "";
+		let B2 = "";
+		let B4 = "";
+		let B5 = "";
+		function CLEAR() {
+			document.getElementById("R").textContent = "";
+			document.getElementById("RR").textContent = "";
+			B1 = "";
+		    B2 = "";
+		    B3 = "";
+		    B4 = "";
+		    T = "";
+		}
+		function A(numero) {
+			B1 += numero;
+			document.getElementById("R").textContent = B1;	
+		}
+
+		function B(OP) {
+			B2 = B1;
+			B3 = OP;
+			B1 = "";
+		}
+		function C() {
+			let T;
+			const N1 = parseFloat(B2);
+			const N2 = parseFloat(B2);
+			if (B3 === '+'){
+				T = N1 + N2;
+			}
+			else if (B3 === '-'){
+				T = N1 - N2;
+			} 
+			else{
+				T = N1 * N2;
+			}
+		    document.getElementById("RR").textContent = T;
+		}
+</script>
+</body>
+</html>
